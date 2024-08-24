@@ -1,3 +1,5 @@
+import AIbot from "../AIbot";
+import TextToSpeech from "../TextToSpeech";
 import { useState, useEffect } from 'react';
 import Mouth from '../assets/mouth.gif'
 import { useNavigate } from 'react-router-dom';
@@ -23,6 +25,9 @@ function Resume() {
 
   return (
     <div className="resume">
+      <p>RESUME!</p>
+      <AIbot />
+      <TextToSpeech />
       <div className="container">
         <div className="image">
           <img className="mouth-pic" src={Mouth} />
