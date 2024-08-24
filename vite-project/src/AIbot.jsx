@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // import { json } from 'react-router-dom';
-export const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXJyaWJsZS5pZGVhQG9wZW5vbmlvbi5haSIsImV4cCI6NTMyNDQ3MDc1Mn0.bbgVzig8BmUk-87Qko5anRhcQARQfAbbkgRc2qivYLw";
+export const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXJyaWJsZS5pZGVhQG9wZW5vbmlvbi5haSIsImV4cCI6NTMyNDQ4Mzc3Mn0.4coCRAgTFqsnqnbLhZXzZItKtenChNOSQTqEL3brPiQ";
 export const urlBASE = 'https://api.closeonion.com';
 
 function AIbot() {
