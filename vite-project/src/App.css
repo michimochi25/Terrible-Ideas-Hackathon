@@ -3,13 +3,31 @@ body,
 html {
   width: 100%;
   margin: 0;
-  background-color: #4C956C;
+  background-color: #FEFEE3;
   display: flex;
   justify-content: center;
 }
 
 .resume,
-.home {
+.innerContainer {
+  width:95%;
+  height:650px;
+  text-align:center;
+  color:black;
+  justify-content:center;
   background-color: #4C956C;
+  font-size:larger;
 }
+
+.subHeadings {
+  color: #FEFEE3;
+  font-size:medium;
+}
+
+.inputContainer {
+  color:#FEFEE3;
+  height:30px;
+  width:20%;
+}
+
 
