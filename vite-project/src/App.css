@@ -13,8 +13,17 @@ html {
   background-color: #4C956C;
 }
 
+.image {
+  background-color: #FEFEE3;
+  width: 300px;
+  height: 500px;
+}
+
 .container {
   display: grid;
+  text-align: center;
+  vertical-align: middle;
+  grid-template-columns: auto auto;
   gap: 30px;
 }
 
@@ -22,4 +31,5 @@ html {
   background-color: #FEFEE3;
   width: 400px;
   height: 550px;
+  border-radius: 20px;
 }
