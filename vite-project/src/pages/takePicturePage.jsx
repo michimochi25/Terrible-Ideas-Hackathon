@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import InputBox from '../components/InputBox';
 import { useNavigate } from 'react-router-dom';
 import WebcamCapture from '../components/Webcam';
 
@@ -10,19 +10,10 @@ function TakePic() {
       <h1>ResuManiac</h1>
       <h3 className="subHeadings">ACE YOUR INTERVIEW</h3>
 
-      <div>
-        <WebcamCapture />
-      </div>
+      <WebcamCapture />
+      <InputBox />
 
-
-      <form className='inputForm' action="" method="get">
-          <textarea
-            className="inputContainer"
-            placeholder='Put the job position you want to apply for, e.g. Software Engineer'
-            rows="4"
-          />
-      </form>
-      <button className="take-pic-button" onClick={() => navigate('/')}>Upload file</button>
+      <button className="take-pic-button" onClick={() => navigate('/')}>Upload a file</button>
     </div>
   )
 }
