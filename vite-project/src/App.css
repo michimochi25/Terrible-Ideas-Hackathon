@@ -23,7 +23,6 @@ html {
   justify-content: center;
   align-items: center;
   height: 100px;
-  width: 90%;
   border-radius: 25px;
   padding: 20px;
   color:black;
@@ -106,3 +105,37 @@ html {
   bottom: 120px;
   left: 120px;
 }
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.fileInputContainer {
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 20px;
+}
+
+.fileInputHidden {
+  display: none; /* Hide the default file input */
+}
+
+.customFileInput {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background-color: #D68C45;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+.customFileInput:hover {
+  background-color: #7ab69f; 
+}
+
