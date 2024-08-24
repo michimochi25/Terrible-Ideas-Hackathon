@@ -29,7 +29,9 @@ html {
 }
 
 .resume-container {
+  padding: 20px;
   background-color: #FEFEE3;
+  color: black;
   width: 400px;
   height: 500px;
   border-radius: 20px;
