@@ -26,6 +26,8 @@ html {
   width: 90%;
   border-radius: 25px;
   padding: 20px;
+  color:black;
+  border:0;
 }
 
 .uploadButton {
