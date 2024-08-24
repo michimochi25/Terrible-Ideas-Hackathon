@@ -2,13 +2,14 @@
 function Resume() {
   return (
     <div className="resume">
-      <p>Resume</p>
+      <h1>Resume</h1>
       <div className="container">
         <div className="image">
+          Image here
           {/* image */}
         </div>
         <div className="resume-container">
-          {/* CV */}
+          {/* the CV */}
         </div>
       </div>
     </div>
