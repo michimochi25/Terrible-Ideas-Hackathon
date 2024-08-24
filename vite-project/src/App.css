@@ -179,6 +179,9 @@ h1 {
   justify-content: space-around;
   align-items: center;
   display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .inputForm {
