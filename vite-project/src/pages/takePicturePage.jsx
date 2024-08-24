@@ -8,12 +8,13 @@ function TakePic() {
   return (
     <div className="innerContainer">
       <h1>ResuManiac</h1>
-      <h3 className="subHeadings">ACE YOUR INTERVIEW</h3>
+      <p className="subHeadings">ACE YOUR INTERVIEW</p>
 
-      <WebcamCapture />
-      <InputBox />
-
-      <button className="take-pic-button" onClick={() => navigate('/')}>Upload a file</button>
+      <div className="flexContainer">
+        <WebcamCapture />
+        <InputBox />
+        <button className="take-pic-button" onClick={() => navigate('/')}>Upload a file</button>
+      </div>
     </div>
   )
 }
