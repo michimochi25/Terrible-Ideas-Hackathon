@@ -14,13 +14,12 @@ function TakePic() {
         <WebcamCapture />
       </div>
 
-
       <form className='inputForm' action="" method="get">
-          <textarea
-            className="inputContainer"
-            placeholder='Put the job position you want to apply for, e.g. Software Engineer'
-            rows="4"
-          />
+        <textarea
+          className="inputContainer"
+          placeholder='Put the job position you want to apply for, e.g. Software Engineer'
+          rows="4"
+        />
       </form>
       <button className="take-pic-button" onClick={() => navigate('/')}>Upload file</button>
     </div>
