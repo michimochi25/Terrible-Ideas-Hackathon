@@ -13,7 +13,9 @@ function TakePic() {
       <div className="flexContainer">
         <WebcamCapture />
         <InputBox />
-        <button className="take-pic-button" onClick={() => navigate('/')}>Upload a file</button>
+        <span className="take-pic-button" onClick={() => navigate('/')}>
+          Upload a file instead?
+        </span>
       </div>
     </div>
   )
