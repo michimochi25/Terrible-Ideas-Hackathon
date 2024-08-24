@@ -62,10 +62,13 @@ html {
 
 .container {
   display: flex;
+  align-items: center;
   flex-direction: row;
   text-align: center;
   vertical-align: middle;
   gap: 50px;
+  justify-content: center;
+  width: 1000px;
   /* margin-bottom: 10px; */
 }
 
@@ -78,13 +81,18 @@ html {
   height: 500px;
 }
 
+.resume {
+  padding-bottom: 20px;
+}
+
 .resume-container {
   padding: 20px;
   background-color: #FEFEE3;
   color: black;
-  width: 400px;
+  width: 550px;
   height: 500px;
   border-radius: 20px;
+  overflow: auto;
 }
 
 .mouth-pic {
@@ -101,9 +109,7 @@ html {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  position: absolute;
-  bottom: 120px;
-  left: 120px;
+
 }
 
 .flexContainer {

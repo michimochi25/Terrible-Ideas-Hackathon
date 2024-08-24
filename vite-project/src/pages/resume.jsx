@@ -26,18 +26,17 @@ function Resume() {
   return (
     <div className="resume">
       <p>RESUME!</p>
-      <AIbot />
       <TextToSpeech />
       <div className="container">
+        <button onClick={() => navigate('../')} className="back-button"></button>
         <div className="image">
           <img className="mouth-pic" src={Mouth} />
         </div>
         <div className="resume-container">
           {/* the CV */}
-          {resumeData}
+          <AIbot />
         </div>
       </div>
-      <button onClick={() => navigate('../')} className="back-button"></button>
     </div>
   )
 }
