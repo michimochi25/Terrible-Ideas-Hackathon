@@ -1,11 +1,13 @@
 import AIbot from "../AIbot";
+import ObjectDetection from "../ObjectDetector";
 
 function Resume() {
 
   return (
     <div className="resume">
       <p>RESUME!</p>
-      <AIbot />
+      {/* <AIbot /> */}
+      <ObjectDetection />
     </div>
   )
 }
