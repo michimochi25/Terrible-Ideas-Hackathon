@@ -1,15 +1,15 @@
 import { useNavigate } from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import resume from './pages/resume';
-import home from './pages/home';
+import Resume from './pages/resume';
+import Home from './pages/home';
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<home />} />
-        <Route path='/resume' element={<resume />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/resume' element={<Resume />} />
       </Routes>
     </>
   )
