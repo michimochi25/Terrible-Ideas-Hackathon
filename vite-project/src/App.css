@@ -3,13 +3,114 @@ body,
 html {
   width: 100%;
   margin: 0;
-  background-color: #4C956C;
   display: flex;
   justify-content: center;
-}
-
-.resume,
-.home {
+  align-items: center;
+  text-align:center;
+  color:black;
   background-color: #4C956C;
+  font-size:larger;
 }
 
+.subHeadings {
+  color: #FEFEE3;
+  font-size:medium;
+}
+
+.inputContainer {
+  display:flex;
+  background-color:#FEFEE3;
+  justify-content:center;
+  align-items:center;
+  height:100px;
+  width:90%;
+  border-radius: 25px;
+  padding:20px;
+}
+
+.uploadButton {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  height:20px;
+  font-weight:bold;
+  width:10%;
+  background-color: #7ab69f;
+  border-radius: 25px;
+  font-size:large;
+}
+
+.biggerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+
+.submitButton {
+  color:white;
+  background-color: #7ab69f;
+  padding: 0.1px;
+  height:30px;
+  font-size:medium;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  vertical-align: middle;
+  gap: 50px;
+  /* margin-bottom: 10px; */
+}
+
+.image {
+  width: 300px;
+  height: 500px;
+}
+
+.resume-container {
+  padding: 20px;
+  background-color: #FEFEE3;
+  color: black;
+  width: 400px;
+  height: 500px;
+  border-radius: 20px;
+}
+
+.mouth-pic {
+  height: 170px;
+  width: auto;
+}
+
+/* .resume button {
+  background-color: transparent;
+  border: none;
+  padding: none;
+}
+
+.resume .back {
+  height: 50px;
+  width: 50px;
+  position: absolute; 
+  bottom: 100px; 
+  left: 100px; 
+} */
+
+.back-button {
+  background-image: url('./assets/icons-back.png');
+  background-size: cover;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute; 
+  bottom: 120px; 
+  left: 120px; 
+}
