@@ -1,44 +1,57 @@
 import React, { useState, useEffect } from 'react';
+// import { json } from 'react-router-dom';
+export const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXJyaWJsZS5pZGVhQG9wZW5vbmlvbi5haSIsImV4cCI6NTMyNDQ3MDc1Mn0.bbgVzig8BmUk-87Qko5anRhcQARQfAbbkgRc2qivYLw";
+export const urlBASE = 'https://api.closeonion.com';
 
 function AIbot() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXJyaWJsZS5pZGVhQG9wZW5vbmlvbi5haSIsImV4cCI6NTMyNDQ3MDc1Mn0.bbgVzig8BmUk-87Qko5anRhcQARQfAbbkgRc2qivYLw";
 
     useEffect(() => {
-        const url = 'https://api.closeonion.com/api/v1/chat/premium_message';
+        const url = urlBASE + '/api/v1/chat/premium_message';
+        const bodyJson = {
+            "messages": [
+              {
+                "role": "user",
+                "content": "how to apply COE?"
+              }
+            ],
+            "stream": false,
+            "model": "Resumaniac",
+            "temperature": 0,
+            "presence_penalty": 0,
+            "frequency_penalty": 0,
+            "top_p": 0
+        };
 
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(
-                {
-                    "messages": [
-                      {
-                        "role": "user",
-                        "content": "how to apply COE?"
-                      }
-                    ],
-                    "stream": false,
-                    "model": "Resumaniac",
-                    "temperature": 0,
-                    "presence_penalty": 0,
-                    "frequency_penalty": 0,
-                    "top_p": 0
-                  }
-            ),
-        })
+        const headerJson = {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        };
+
+        fetch(
+            url, 
+            {
+                method: 'POST',
+                headers: headerJson,
+                body: JSON.stringify(bodyJson),
+            })
             .then((response) => {
                 if (!response.ok) {
                     console.log(response.status)
                     throw new Error('Network response was not ok');
                 }
                 console.log('Content-Type:', response.headers.get('Content-Type'));
-                const r = response.json();
+                // console.log("======================");
+                // console.log(response.text());
+
+
+                // const r = response.json();
+
+                const r = response.text();
+
+                console.log(r);
                 return r;
             })
             .then((data) => {
@@ -59,10 +72,23 @@ function AIbot() {
         return <div>Error: {error.message}</div>;
     }
 
+    // to-do: refactor later
+    const words = data.split('}');
+    const result = [];
+    for (let word of words) {
+        word = word.replace('data: {"answer": "', '');
+        word = word.replace('"', '');
+        result.push(word);
+    }
+
+    console.log(result);
+
     return (
         <div>
             <h1>Data from API</h1>
-            <pre>{JSON.stringify(data, null, 2)}</pre>
+            <p>{result}</p>
+            {/* <p>{JSON.stringify(data, null, 2)}</p> */}
+
         </div>
     );
 }
