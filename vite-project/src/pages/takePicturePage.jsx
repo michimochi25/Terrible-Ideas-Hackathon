@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import WebcamCapture from '../components/Webcam';
 
-function Home() {
-  const navigate = useNavigate();
+function TakePic() {
   const imgID = document.getElementById('imgID');
   const imgForm = document.getElementById('imgForm');
-
+  const navigate = useNavigate();
   const upload = () => {
     imgForm.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -28,20 +29,16 @@ function Home() {
       <h1>ResuManiac</h1>
       <h3 className="subHeadings">ACE YOUR INTERVIEW</h3>
 
-      <div className="biggerContainer">
-        <form action="http://localhost:3000/api/image" method="post" encType="multipart/form-data" id='imgForm'>
-          <input type="file" name="image" onChange={upload} accept="image/*" id="imgID" className="forSpaces"></input>
-          <form action="" method="get">
-            <input type="text" className="inputContainer"></input>
-          </form>
-          <div className="submitButton">
-            <button className="submitButton">Submit</button>
-          </div>
-        </form>
+      <div>
+        <WebcamCapture />
       </div>
-      <button className="take-pic-button" onClick={() => navigate('/takepic')}>Take a picture</button>
+
+      <div className="biggerContainer">
+        <div className="inputContainer"></div>
+      </div>
+      <button className="take-pic-button" onClick={() => navigate('/')}>Upload file</button>
     </div>
   )
 }
 
-export default Home;
+export default TakePic;

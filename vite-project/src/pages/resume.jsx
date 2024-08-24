@@ -2,10 +2,11 @@ import AIbot from "../AIbot";
 import ObjectDetection from "../ObjectDetector";
 import { useState, useEffect } from 'react';
 import Mouth from '../assets/mouth.gif'
-import Back from '../assets/icons-back.png'
 import { useNavigate } from 'react-router-dom';
 
 function Resume() {
+  const navigate = useNavigate();
+
   const [resumeData, setResumeData] = useState(null);
   useEffect(() => {
     const fetchResumeData = async () => {
