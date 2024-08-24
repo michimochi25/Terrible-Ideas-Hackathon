@@ -10,6 +10,7 @@ function Resume() {
         </div>
         <div className="resume-container">
           {/* CV */}
+          <AIbot />
         </div>
       </div>
     </div>
