@@ -1,27 +1,26 @@
-import React, { useState, useEffect } from 'react';
-const textToSpeech = require('@google-cloud/text-to-speech');
-const fs = require('fs');
-const util = require('util');
-const client = new textToSpeech.TextToSpeechClient()
-
-
-async function TextToSpeech(text) {
-    const request = {
-        input: {text: text},
-        voice: {languageCode: 'en-US', ssmlGender: 'NEUTRAL'},
-        audioConfig: {audioEncoding: 'MP3'},
-      };
-
-    const [response] = await client.synthesizeSpeech(request);
-    const writeFile = util.promisify(fs.writeFile);
-    await writeFile('output.mp3', response.audioContent, 'binary');
-    // console.log('Audio content written to file: output.mp3');
+import React, { useState } from 'react';
+import { useSpeech } from "react-text-to-speech";
     
-    return (
-        <div>
-            <h1>Text to speech</h1>
+function TextToSpeech() {
+
+      const {
+        Text, // Component that returns the modified text property
+        speechStatus, // String that stores current speech status
+        isInQueue, // Boolean that stores whether a speech utterance is either being spoken or present in queue
+        start, // Function to start the speech or put it in queue
+        pause, // Function to pause the speech
+        stop, // Function to stop the speech or remove it from queue
+      } = useSpeech({ text: "This library is awesome!" });
+    
+      return (
+        <div style={{ display: "flex", flexDirection: "column", rowGap: "1rem" }}>
+          <Text />
+          <div style={{ display: "flex", columnGap: "0.5rem" }}>
+            {speechStatus !== "started" ? <button onClick={start}>Start</button> : <button onClick={pause}>Pause</button>}
+            <button onClick={stop}>Stop</button>
+          </div>
         </div>
-    );
+      );
 }
 
 export default TextToSpeech;
