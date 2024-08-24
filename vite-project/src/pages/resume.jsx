@@ -3,6 +3,7 @@ import ObjectDetection from "../ObjectDetector";
 import { useState, useEffect } from 'react';
 import Mouth from '../assets/mouth.gif'
 import { useNavigate } from 'react-router-dom';
+import OpenAIbot from "../OpenAIbot";
 
 function Resume() {
   const navigate = useNavigate();
@@ -32,7 +33,8 @@ function Resume() {
         </div>
         <div className="resume-container">
           {/* the CV */}
-          {resumeData}
+          {/* {resumeData} */}
+          <OpenAIbot />
         </div>
       </div>
       <button onClick={() => navigate('../')} className="back-button"></button>
