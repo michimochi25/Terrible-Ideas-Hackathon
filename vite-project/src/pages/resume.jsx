@@ -1,11 +1,17 @@
 import AIbot from "../AIbot";
 
 function Resume() {
-
   return (
     <div className="resume">
-      <p>RESUME!</p>
-      <AIbot />
+      <p>Resume</p>
+      <div className="container">
+        <div className="image">
+          {/* image */}
+        </div>
+        <div className="resume-container">
+          {/* CV */}
+        </div>
+      </div>
     </div>
   )
 }
