@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
+import Camera from '../assets/camera.svg';
 
 const WebcamCapture = () => {
   const webcamRef = useRef(null);
@@ -20,20 +21,20 @@ const WebcamCapture = () => {
           width={320}
           height={240}
         />
-        <button onClick={capture}>Capture photo</button>
+        <button className='camera-button' onClick={capture}>
+          <img src={Camera} />
+        </button>
       </div>
 
       <div>
         {imageSrc && (
-        <div>
-          <h2>Captured Image:</h2>
-          <img src={imageSrc} alt="Captured" />
-        </div>
-      )}
+          <div>
+            <h2>Captured Image:</h2>
+            <img src={imageSrc} alt="Captured" />
+          </div>
+        )}
       </div>
     </div>
-
-    
   );
 };
 

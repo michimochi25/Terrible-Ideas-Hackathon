@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import InputBox from '../components/InputBox.jsx';
 
 function Home() {
   const navigate = useNavigate();
@@ -26,12 +27,10 @@ function Home() {
   return (
     <div className="innerContainer">
       <h1>ResuManiac</h1>
-      <h3 className="subHeadings">ACE YOUR INTERVIEW</h3>
+      <p className="subHeadings">ACE YOUR INTERVIEW</p>
 
       <div className='flexContainer'>
-
         <div className='fileInputContainer'>
-        
           <form
             action='http://localhost:3000/api/image'
             method='post'
@@ -51,29 +50,14 @@ function Home() {
               Choose File
             </label>
           </form>
-          </div>
+        </div>
 
-          <form action="" method="get">
-            <textarea
-              className="inputContainer"
-              placeholder='Put the job position you want to apply for, e.g. Software Engineer'
-              rows="4"
-            />
-            </form>
-          <div className="submitButton">
-              <button type="submit" className="submitButton">
-                Submit
-              </button>
-            </div>
+        <InputBox />
 
-
-          <button className="take-pic-button" onClick={() => navigate('/takepic')}>
-            Take a picture
-          </button>
-
-
+        <button className="take-pic-button" onClick={() => navigate('/takepic')}>
+          Take a picture
+        </button>
       </div>
-     
     </div>
   )
 }
