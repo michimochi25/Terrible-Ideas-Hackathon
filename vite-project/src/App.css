@@ -13,3 +13,13 @@ html {
   background-color: #4C956C;
 }
 
+.container {
+  display: grid;
+  gap: 30px;
+}
+
+.resume-container {
+  background-color: #FEFEE3;
+  width: 400px;
+  height: 550px;
+}
