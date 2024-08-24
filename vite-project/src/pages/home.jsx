@@ -30,12 +30,14 @@ function Home() {
 
       <div className="biggerContainer">
         <form action="http://localhost:3000/api/image" method="post" encType="multipart/form-data" id='imgForm'>
-          <input type="file" name="image" onChange={upload} accept="image/*" id="imgID"></input>
+          <input type="file" name="image" onChange={upload} accept="image/*" id="imgID" className="forSpaces"></input>
+          <form action="" method="get">
+            <input type="text" className="inputContainer"></input>
+          </form>
           <div className="submitButton">
             <button className="submitButton">Submit</button>
           </div>
         </form>
-        <div className="inputContainer"></div>
       </div>
       <button className="take-pic-button" onClick={() => navigate('/takepic')}>Take a picture</button>
     </div>

@@ -20,12 +20,13 @@ html {
 .inputContainer {
   display:flex;
   background-color:#FEFEE3;
-  justify-content:center;
-  align-items:center;
   height:100px;
-  width:90%;
+  width:100%;
   border-radius: 25px;
   padding:20px;
+  color:black;
+  border: none;
+  margin-bottom:10px;
 }
 
 .uploadButton {
@@ -66,6 +67,10 @@ html {
   vertical-align: middle;
   gap: 50px;
   /* margin-bottom: 10px; */
+}
+
+.forSpaces {
+  margin-bottom:10px;
 }
 
 .image {
