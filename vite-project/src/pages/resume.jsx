@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import Mouth from '../assets/mouth.gif'
+import Back from '../assets/icons-back.png'
+import { useNavigate } from 'react-router-dom';
 
 function Resume() {
   const [resumeData, setResumeData] = useState(null);
@@ -29,6 +31,7 @@ function Resume() {
           {resumeData}
         </div>
       </div>
+      <button onClick={() => navigate('../')} className="back-button"></button>
     </div>
   )
 }
