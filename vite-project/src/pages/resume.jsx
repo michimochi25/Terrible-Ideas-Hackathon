@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Mouth from '../assets/mouth.gif'
 
 function Resume() {
-  const [resumeData, setResumeData] = useState(0);
+  const [resumeData, setResumeData] = useState(null);
   useEffect(() => {
     const fetchResumeData = async () => {
       try {
