@@ -1,5 +1,5 @@
 
-function resume() {
+function Resume() {
 
   return (
     <div className="resume">
@@ -8,4 +8,4 @@ function resume() {
   )
 }
 
-export default resume;
+export default Resume;

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-function home() {
+function Home() {
   return (
     <div className="home">
       <p>HOME!</p>
@@ -10,4 +10,4 @@ function home() {
   )
 }
 
-export default home;
+export default Home;
