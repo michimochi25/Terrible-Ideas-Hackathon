@@ -139,3 +139,16 @@ html {
   background-color: #7ab69f; 
 }
 
+.take-photo {
+  display: flex;
+}
+
+.inputForm {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.take-pic-button {
+  margin-bottom: 50px;
+}

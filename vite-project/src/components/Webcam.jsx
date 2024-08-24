@@ -12,21 +12,28 @@ const WebcamCapture = () => {
 
   return (
     <div className='webcam'>
-      <Webcam
-        audio={false}
-        ref={webcamRef}
-        screenshotFormat="image/jpeg"
-        width={320}
-        height={240}
-      />
-      <button onClick={capture}>Capture photo</button>
-      {imageSrc && (
+      <div className='take-photo'>
+        <Webcam
+          audio={false}
+          ref={webcamRef}
+          screenshotFormat="image/jpeg"
+          width={320}
+          height={240}
+        />
+        <button onClick={capture}>Capture photo</button>
+      </div>
+
+      <div>
+        {imageSrc && (
         <div>
           <h2>Captured Image:</h2>
           <img src={imageSrc} alt="Captured" />
         </div>
       )}
+      </div>
     </div>
+
+    
   );
 };
 

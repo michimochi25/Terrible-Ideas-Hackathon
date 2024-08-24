@@ -15,7 +15,7 @@ function TakePic() {
       </div>
 
 
-      <form action="" method="get">
+      <form className='inputForm' action="" method="get">
           <textarea
             className="inputContainer"
             placeholder='Put the job position you want to apply for, e.g. Software Engineer'
