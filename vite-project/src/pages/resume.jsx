@@ -1,14 +1,21 @@
+import { useState, useEffect } from 'react';
 
 function Resume() {
+  const [data, setData] = useState(0);
+  useEffect(() => {
+
+  }, []);
+
   return (
     <div className="resume">
-      <p>Resume</p>
       <div className="container">
         <div className="image">
+          Image here
           {/* image */}
         </div>
         <div className="resume-container">
-          {/* CV */}
+          {/* the CV */}
+          {data}
         </div>
       </div>
     </div>
