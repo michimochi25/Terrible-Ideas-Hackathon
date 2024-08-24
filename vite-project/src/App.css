@@ -3,14 +3,60 @@ body,
 html {
   width: 100%;
   margin: 0;
-  background-color: #4C956C;
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align:center;
+  color:black;
+  background-color: #4C956C;
+  font-size:larger;
 }
 
-.resume,
-.home {
-  background-color: #4C956C;
+.subHeadings {
+  color: #FEFEE3;
+  font-size:medium;
+}
+
+.inputContainer {
+  display:flex;
+  background-color:#FEFEE3;
+  justify-content:center;
+  align-items:center;
+  height:100px;
+  width:90%;
+  border-radius: 25px;
+  padding:20px;
+}
+
+.uploadButton {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  height:20px;
+  font-weight:bold;
+  width:10%;
+  background-color: #7ab69f;
+  border-radius: 25px;
+  font-size:large;
+}
+
+.biggerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+
+.submitButton {
+  color:white;
+  background-color: #7ab69f;
+  padding: 0.1px;
+  height:30px;
+  font-size:medium;
+  width: 50%;
+  border-radius: 10px;
 }
 
 .container {
