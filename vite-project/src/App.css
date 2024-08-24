@@ -17,6 +17,18 @@ html {
   font-size: medium;
 }
 
+.innerContainer {
+  align-items: center;
+}
+
+.input-box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
 .inputContainer {
   display: flex;
   background-color: #FEFEE3;
@@ -146,7 +158,16 @@ html {
   background-color: #7ab69f;
 }
 
+.camera-button {
+  width: 70px;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 55px;
+}
+
 .take-photo {
+  justify-content: space-around;
+  align-items: center;
   display: flex;
 }
 
