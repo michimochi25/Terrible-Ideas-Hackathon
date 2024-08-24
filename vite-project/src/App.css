@@ -25,8 +25,8 @@ html {
   height: 100px;
   border-radius: 25px;
   padding: 20px;
-  color:black;
-  border:0;
+  color: black;
+  border: 0;
 }
 
 .uploadButton {
@@ -70,7 +70,7 @@ html {
 }
 
 .forSpaces {
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 .image {
@@ -116,12 +116,13 @@ html {
 
 .fileInputContainer {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   margin-bottom: 20px;
 }
 
 .fileInputHidden {
-  display: none; /* Hide the default file input */
+  display: none;
+  /* Hide the default file input */
 }
 
 .customFileInput {
@@ -136,11 +137,14 @@ html {
 }
 
 .customFileInput:hover {
-  background-color: #7ab69f; 
+  background-color: #7ab69f;
 }
 
 .take-photo {
   display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .inputForm {
