@@ -4,8 +4,7 @@ import Back from '../assets/icons-back.png'
 import { useNavigate } from 'react-router-dom';
 
 function Resume() {
-  const navigate = useNavigate();
-  const [resumeData, setResumeData] = useState(0);
+  const [resumeData, setResumeData] = useState(null);
   useEffect(() => {
     const fetchResumeData = async () => {
       try {
@@ -32,7 +31,7 @@ function Resume() {
           {resumeData}
         </div>
       </div>
-          <button onClick={() => navigate('../')} className="back-button"></button>
+      <button onClick={() => navigate('../')} className="back-button"></button>
     </div>
   )
 }
