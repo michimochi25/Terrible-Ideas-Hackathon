@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
+import ObjectDetection from '../ObjectDetector';
 
 const WebcamCapture = () => {
   const webcamRef = useRef(null);
@@ -8,7 +9,11 @@ const WebcamCapture = () => {
   const capture = () => {
     const imageSrc = webcamRef.current.getScreenshot();
     setImageSrc(imageSrc);
+    const link = document.createElement('a');
+    link.href = capture;
+    link.download = 'images/target.png';
   };
+
 
   return (
     <div className='webcam'>
@@ -23,7 +28,8 @@ const WebcamCapture = () => {
       {imageSrc && (
         <div>
           <h2>Captured Image:</h2>
-          <img src={imageSrc} alt="Captured" />
+          {/* <img src={imageSrc} alt="Captured" /> */}
+          <ObjectDetection imageSrc={imageSrc}/>
         </div>
       )}
     </div>

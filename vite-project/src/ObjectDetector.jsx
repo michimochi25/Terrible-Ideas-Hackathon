@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
 import '@tensorflow/tfjs';
 
-const ObjectDetection = () => {
+const ObjectDetection = ({ imageSrc }) => {
   const imageRef = useRef(null);
   const canvasRef = useRef(null);
   const [highestConfidenceObject, setHighestConfidenceObject] = useState(null);
@@ -52,7 +52,8 @@ const ObjectDetection = () => {
     <div style={{ position: 'relative', display: 'inline-block' }}>
       <img
         ref={imageRef}
-        src="images/potted-plant-2.jpg"
+        // src="images/potted-plant-2.jpg"
+        src={imageSrc}
         alt="Target"
         width="600"
         height="800"
