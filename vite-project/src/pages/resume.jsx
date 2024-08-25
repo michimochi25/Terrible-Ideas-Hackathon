@@ -13,7 +13,12 @@ function Resume() {
       <TextToSpeech />
       <div className="container">
         <button onClick={() => navigate('../')} className="back-button"></button>
-        {label && <div className="image" style={{ backgroundImage: `url(${img})`, backgroundRepeat: 'no-repeat' }}>
+        {label && <div className="image"
+          style={{
+            backgroundImage: `url(${img})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center'
+          }}>
           <img className="mouth-pic" src={Mouth} />
         </div>}
         <div className="resume-container">
