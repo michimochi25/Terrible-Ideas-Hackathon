@@ -5,10 +5,17 @@ import axios from 'axios';
 
 const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 
-const OpenAIbot = () => {
+const OpenAIbot = ({ label }) => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  let basePrompt = `Can you come up with a resume for a {$label}? The resume should 
+  consists of skills suitable for a normal job that makes logical sense and a superhero 
+  alter ego. Make it as comprehensive as you can while making it funny. Be sure to include 
+  experiences and skills that it would have and would be relevant for these jobs. You can 
+  use your imagination as long as it makes sense. You can make connections to elements from
+   the popular culture in Australia as well as elements from its hypothetical daily life.`;
 
   const handleSend = async () => {
     setLoading(true);
@@ -45,7 +52,7 @@ const OpenAIbot = () => {
           </div>
         ))}
       </div>
-      <textarea value={input} onChange={(e) => setInput(e.target.value)} />
+      <textarea value={input} onChange={(e) => setInput()} />
       <button onClick={handleSend} disabled={loading}>
         {loading ? 'Sending...' : 'Send'}
       </button>

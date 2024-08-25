@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
 import '@tensorflow/tfjs';
 
-const ObjectDetection = ({ imageSrc }) => {
+const ObjectDetection = ({ imageSrc, onTargetLabelChange }) => {
   const imageRef = useRef(null);
   const canvasRef = useRef(null);
   const [highestConfidenceObject, setHighestConfidenceObject] = useState(null);
@@ -45,6 +45,8 @@ const ObjectDetection = ({ imageSrc }) => {
         bbox[0],
         bbox[1] > 20 ? bbox[1] - 10 : bbox[1] + 20
       );
+      
+      onTargetLabelChange(label); // Pass the label to webcam component
     }
   }, [highestConfidenceObject]);
 
@@ -55,13 +57,13 @@ const ObjectDetection = ({ imageSrc }) => {
         // src="images/potted-plant-2.jpg"
         src={imageSrc}
         alt="Target"
-        width="600"
-        height="800"
+        width="320"
+        height="240"
       />
       <canvas
         ref={canvasRef}
-        width="600"
-        height="800"
+        width="320"
+        height="240"
         style={{ position: 'absolute', top: 0, left: 0 }}
       />
     </div>
