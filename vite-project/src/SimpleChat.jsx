@@ -35,10 +35,12 @@ const SimpleChat = () => {
 
   return (
     <div>
-      <textarea value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type your prompt here" />
-      <button onClick={handleSend} disabled={loading}>
-        {loading ? 'Loading...' : 'Send'}
-      </button>
+      <div className="AIPrompt">
+      <textarea value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type your prompt here" className="AIContainer"/>
+        <button onClick={handleSend} disabled={loading} className="sendButton">
+          {loading ? 'Loading...' : 'Send'}
+        </button>
+      </div>
       <div>
         <strong>Response:</strong>
         <p>{response}</p>

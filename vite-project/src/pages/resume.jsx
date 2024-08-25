@@ -28,7 +28,7 @@ function Resume() {
 
   return (
     <div className="resume">
-      <p>RESUME!</p>
+      <h1>RESUME</h1>
       <TextToSpeech />
       <div className="container">
         <button onClick={() => navigate('../')} className="back-button"></button>
@@ -40,8 +40,6 @@ function Resume() {
           {/* <OpenAIbot /> */}
           {/* <LlamaBot /> */}
           <SimpleChat />
-          <div hidden>
-          </div>
         </div>
       </div>
     </div>

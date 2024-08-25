@@ -110,6 +110,10 @@ h2 {
   padding-bottom: 20px;
 }
 
+.resumeHeadings {
+  display: flex;
+}
+
 .resume-container {
   padding: 20px;
   background-color: #FEFEE3;
@@ -134,7 +138,6 @@ h2 {
   background-color: transparent;
   border: none;
   cursor: pointer;
-
 }
 
 .flexContainer {
@@ -216,4 +219,30 @@ h2 {
   max-height: 200px;
   max-width: 500px;
   border-radius: 10%;
+}
+
+.AIContainer {
+  margin-right: 5px;
+}
+
+.sendButton {
+  padding:10px;
+  margin:0;
+  text-align:center;
+  font-size: medium;
+  background-color: #747677;
+}
+
+.AIPrompt {
+  display:flex;
+  justify-content: center;
+  margin-bottom:5px;
+}
+
+.button {
+  padding: 15px;
+  font-size:large;
+  background-color:#dda571;
+  color:#4e4e4f;
+  font-weight: bold;
 }

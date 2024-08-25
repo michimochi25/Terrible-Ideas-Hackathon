@@ -36,7 +36,7 @@ const OpenAIbot = ({ label }) => {
 
   return (
     <div>
-      <div>
+      <div className>
         {messages.map((msg, index) => (
           <div key={index} className={msg.role}>
             <strong>{msg.role === 'user' ? 'You' : 'Assistant'}:</strong> {msg.content}
