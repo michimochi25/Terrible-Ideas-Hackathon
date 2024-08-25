@@ -104,10 +104,13 @@ h2 {
 .image {
   width: 300px;
   height: 500px;
+  display: flex;
+  place-items: center;
+  justify-content: center;
 }
 
 .resume {
-  padding-bottom: 20px;
+  padding: 20px;
 }
 
 .resume-container {
