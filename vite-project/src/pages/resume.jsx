@@ -1,4 +1,4 @@
-import AIbot from "../AIbot";
+import OpenAIbot from "../OpenAIbot";
 import TextToSpeech from "../TextToSpeech";
 import { useState, useEffect } from 'react';
 import Mouth from '../assets/mouth.gif'
@@ -34,7 +34,7 @@ function Resume() {
         </div>
         <div className="resume-container">
           {/* the CV */}
-          <AIbot />
+          <OpenAIbot />
         </div>
       </div>
     </div>
