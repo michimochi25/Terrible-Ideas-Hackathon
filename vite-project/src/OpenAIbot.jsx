@@ -14,7 +14,7 @@ const OpenAIbot = ({ label }) => {
   experiences and skills that it would have and would be relevant for these jobs. You can 
   use your imagination as long as it makes sense. You can make connections to elements from
    the popular culture in Australia as well as elements from its hypothetical daily life.`;
-
+  console.log(label);
   const handleSend = async () => {
     setLoading(true);
     try {
