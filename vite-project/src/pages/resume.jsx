@@ -34,7 +34,9 @@ function Resume() {
         </div>
         <div className="resume-container">
           {/* the CV */}
-          <OpenAIbot label={label}/>
+          <div hidden>
+            <OpenAIbot  label={label}/>
+          </div>
         </div>
       </div>
     </div>
