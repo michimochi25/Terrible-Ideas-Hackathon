@@ -26,7 +26,14 @@ const SimpleChat = ({ onResponse }) => {
         }
       );
 
+      // console.log(result);
+
+
       response = result.data.choices[0].message.content;
+
+      console.log(response);
+
+
       onResponse(result.data.choices[0].message.content);
 
     } catch (error) {
@@ -35,6 +42,8 @@ const SimpleChat = ({ onResponse }) => {
       setLoading(false);
     }
   };
+
+  // console.log(response + "sdfg");
 
   return (
     <div>
