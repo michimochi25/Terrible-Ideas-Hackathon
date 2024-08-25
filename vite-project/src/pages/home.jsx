@@ -1,39 +1,26 @@
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import InputBox from '../components/InputBox.jsx';
 
 function Home() {
   const navigate = useNavigate();
-  const imgID = document.getElementById('imgID');
-  const imgForm = document.getElementById('imgForm');
+  const [imgSrc, setImgSrc] = useState(null);
 
-  const upload = () => {
-    imgForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      console.log("submit img");
-      fetch(imgForm.action, {
-        method: 'POST',
-        body: new FormData(imgForm)
-      })
-    });
-
-    imgID.addEventListener('change', (event) => {
-      if (event?.target.files && event.target.files[0]) {
-        imgID.src = URL.createObjectURL(event.target.files[0]);
-        imgID.load()
-      }
-    });
+  const upload = (event) => {
+    if (event?.target.files && event.target.files[0]) {
+      const file = event.target.files[0];
+      setImgSrc(URL.createObjectURL(event.target.files[0]));
+    }
   }
 
   return (
     <div className="innerContainer">
       <h1>ResuManiac</h1>
-      <h3 className="subHeadings">ACE YOUR INTERVIEW</h3>
+      <p className="subHeadings">ACE YOUR INTERVIEW</p>
 
       <div className='flexContainer'>
-
         <div className='fileInputContainer'>
-        
           <form
-            action='http://localhost:3000/api/image'
             method='post'
             encType='multipart/form-data'
             id='imgForm'
@@ -50,30 +37,23 @@ function Home() {
             <label htmlFor="imgID" className="customFileInput">
               Choose File
             </label>
+
+            {imgSrc && <div>
+              <h2>Preview</h2>
+              <div className='img-preview'>
+                <img style={{ maxWidth: '500px', maxHeight: '200px' }} src={imgSrc} />
+              </div>
+            </div>}
+
           </form>
-          </div>
+        </div>
 
-          <form action="" method="get">
-            <textarea
-              className="inputContainer"
-              placeholder='Put the job position you want to apply for, e.g. Software Engineer'
-              rows="4"
-            />
-            </form>
-          <div className="submitButton">
-              <button type="submit" className="submitButton">
-                Submit
-              </button>
-            </div>
+        <InputBox />
 
-
-          <button className="take-pic-button" onClick={() => navigate('/takepic')}>
-            Take a picture
-          </button>
-
-
+        <span className="take-pic-button" onClick={() => navigate('/takepic')}>
+          Take a picture instead?
+        </span>
       </div>
-     
     </div>
   )
 }

@@ -7,20 +7,20 @@ import { useNavigate } from 'react-router-dom';
 function Resume() {
   const navigate = useNavigate();
 
-  const [resumeData, setResumeData] = useState(null);
-  useEffect(() => {
-    const fetchResumeData = async () => {
-      try {
-        const response = await fetch('http://localhost:3000/api/resume');
-        const data = await response.json();
-        setResumeData(data);
-      } catch (error) {
-        console.error('Error fetching resume data:', error);
-      }
-    };
+  // const [resumeData, setResumeData] = useState(null);
+  // useEffect(() => {
+  //   const fetchResumeData = async () => {
+  //     try {
+  //       const response = await fetch('http://localhost:3000/api/resume');
+  //       const data = await response.json();
+  //       setResumeData(data);
+  //     } catch (error) {
+  //       console.error('Error fetching resume data:', error);
+  //     }
+  //   };
 
-    fetchResumeData();
-  }, []);
+  //   fetchResumeData();
+  // }, []);
 
 
   return (
