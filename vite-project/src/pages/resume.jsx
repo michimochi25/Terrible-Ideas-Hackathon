@@ -19,9 +19,6 @@ function Resume() {
     console.log(newResponse);
   };
 
-  const text = "You suck, no resume for you!";
-
-
   return (
     <div className="resume">
       <h1>RESUME</h1>
