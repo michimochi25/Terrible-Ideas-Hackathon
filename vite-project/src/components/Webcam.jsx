@@ -20,11 +20,17 @@ const WebcamCapture = () => {
   };
 
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   if (targetLabel) {
+  //     navigate('/resume', { state: { label: targetLabel, img: imageSrc } });
+  //   }
+  // }, [targetLabel, navigate, imageSrc]);
+
+  setTimeout(() => {
     if (targetLabel) {
       navigate('/resume', { state: { label: targetLabel, img: imageSrc } });
     }
-  }, [targetLabel, navigate, imageSrc]);
+  }, 4000);
 
   return (
     <div className='webcam'>
