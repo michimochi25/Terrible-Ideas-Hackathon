@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const SimpleChat = ({ onResponse }) => {
   const [input, setInput] = useState('');
+  const response = '';
   // const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -26,7 +27,7 @@ const SimpleChat = ({ onResponse }) => {
       );
 
       // setResponse(result.data.choices[0].message.content);
-      const response = result.data.choices[0].message.content;
+      // const response = result.data.choices[0].message.content;
       onResponse(result.data.choices[0].message.content);
 
     } catch (error) {
