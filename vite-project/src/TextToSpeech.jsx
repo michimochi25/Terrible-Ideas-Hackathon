@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSpeech } from "react-text-to-speech";
 
-function TextToSpeech() {
+function TextToSpeech({text}) {
   const {
     Text, // Component that returns the modified text property
     speechStatus, // String that stores current speech status
@@ -9,7 +9,7 @@ function TextToSpeech() {
     start, // Function to start the speech or put it in queue
     pause, // Function to pause the speech
     stop, // Function to stop the speech or remove it from queue
-  } = useSpeech({ text: "You suck, no resume for you!" });
+  } = useSpeech({ text });
 
   useEffect(() => {
     // auto start

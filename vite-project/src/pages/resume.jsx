@@ -17,26 +17,12 @@ function Resume() {
     setResponse(newResponse);
   }
 
-  // const [resumeData, setResumeData] = useState(null);
-  // useEffect(() => {
-  //   const fetchResumeData = async () => {
-  //     try {
-  //       const response = await fetch('http://localhost:3000/api/resume');
-  //       const data = await response.json();
-  //       setResumeData(data);
-  //     } catch (error) {
-  //       console.error('Error fetching resume data:', error);
-  //     }
-  //   };
-
-  //   fetchResumeData();
-  // }, []);
-
+  const temp ="temp cehck"
 
   return (
     <div className="resume">
       <p>RESUME!</p>
-      <TextToSpeech text={response}/>
+      <TextToSpeech text={temp}/>
       <div className="container">
         <button onClick={() => navigate('../')} className="back-button"></button>
         <div className="image">
