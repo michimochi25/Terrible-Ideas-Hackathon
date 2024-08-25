@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const SimpleChat = () => {
+const SimpleChat = ({ onResponse }) => {
   const [input, setInput] = useState('');
-  const [response, setResponse] = useState('');
+  // const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
+  let response = '';
 
   const handleSend = async () => {
     setLoading(true);
@@ -25,7 +26,8 @@ const SimpleChat = () => {
         }
       );
 
-      setResponse(result.data.choices[0].message.content);
+      response = result.data.choices[0].message.content;
+      onResponse(response);
     } catch (error) {
       console.error('Error:', error.response ? error.response.data : error.message);
     } finally {
