@@ -3,6 +3,7 @@ import TextToSpeech from "../TextToSpeech";
 import { useState, useEffect } from 'react';
 import Mouth from '../assets/mouth.gif'
 import { useNavigate } from 'react-router-dom';
+import LlamaBot from "../../LlamaBot";
 
 function Resume() {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ function Resume() {
         <div className="resume-container">
           {/* the CV */}
           <OpenAIbot />
+          {/* <LlamaBot /> */}
         </div>
       </div>
     </div>
