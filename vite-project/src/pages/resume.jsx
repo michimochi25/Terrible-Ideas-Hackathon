@@ -2,6 +2,8 @@ import OpenAIbot from "../OpenAIbot";
 import TextToSpeech from "../TextToSpeech";
 import Mouth from '../assets/mouth.gif'
 import { useLocation, useNavigate } from 'react-router-dom';
+import LlamaBot from "../../LlamaBot";
+import SimpleChat from "../SimpleChat";
 
 function Resume() {
   const location = useLocation();
@@ -23,10 +25,14 @@ function Resume() {
         </div>}
         <div className="resume-container">
           {/* the CV */}
-          <OpenAIbot label={label} />
-        </div>
-      </div>
-    </div>
+          {/* <OpenAIbot /> */}
+          {/* <LlamaBot /> */}
+          <SimpleChat />
+          <div hidden>
+          </div>
+        </div >
+      </div >
+    </div >
   )
 }
 
