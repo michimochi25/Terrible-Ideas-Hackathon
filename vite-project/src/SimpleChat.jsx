@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import jsPDF from 'jspdf';
 
 const SimpleChat = ({ label, onResponse }) => {
   const [input, setInput] = useState('');
@@ -30,11 +31,32 @@ const SimpleChat = ({ label, onResponse }) => {
 
       response = result.data.choices[0].message.content;
       onResponse(response);
+
+      // downloadFile(response, Date.now() + 'resume');
+      generatePDF(response, Date.now() + 'resume.pdf');
     } catch (error) {
       console.error('Error:', error.response ? error.response.data : error.message);
     } finally {
       setLoading(false);
     }
+  };
+
+  // const downloadFile = (content, fileName) => {
+  //   const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+  //   const url = URL.createObjectURL(blob);
+  //   const a = document.createElement('a');
+  //   a.href = url;
+  //   a.download = fileName;
+  //   document.body.appendChild(a);
+  //   a.click();
+  //   document.body.removeChild(a);
+  //   URL.revokeObjectURL(url);
+  // };
+
+  const generatePDF = (text, fileName) => {
+    const doc = new jsPDF();
+    doc.text(text, 10, 10);
+    doc.save(fileName); // Trigger the download
   };
 
   return (
