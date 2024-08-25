@@ -1,13 +1,15 @@
 import OpenAIbot from "../OpenAIbot";
 import TextToSpeech from "../TextToSpeech";
-import { useState, useEffect } from 'react';
 import Mouth from '../assets/mouth.gif'
 import { useNavigate } from 'react-router-dom';
 import LlamaBot from "../../LlamaBot";
+import { useLocation } from 'react-router-dom';
+import SimpleChat from "../SimpleChat";
 
 function Resume() {
-  const navigate = useNavigate();
+  const location = useLocation();
 
+  const label = location.state;
   // const [resumeData, setResumeData] = useState(null);
   // useEffect(() => {
   //   const fetchResumeData = async () => {
@@ -35,8 +37,11 @@ function Resume() {
         </div>
         <div className="resume-container">
           {/* the CV */}
-          <OpenAIbot />
+          {/* <OpenAIbot /> */}
           {/* <LlamaBot /> */}
+          <SimpleChat />
+          <div hidden>
+          </div>
         </div>
       </div>
     </div>
