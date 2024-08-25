@@ -16,7 +16,8 @@ function Home() {
   return (
     <div className="innerContainer">
       <h1>ResuManiac</h1>
-      <p className="subHeadings">ACE YOUR INTERVIEW</p>
+      <p className="subHeadings">Rescue Your Career…
+        or Sabotage It, We’re Not Sure!</p>
 
       <div className='flexContainer'>
         <div className='fileInputContainer'>
@@ -44,7 +45,6 @@ function Home() {
                 <img style={{ maxWidth: '500px', maxHeight: '200px' }} src={imgSrc} />
               </div>
             </div>}
-
           </form>
         </div>
 
