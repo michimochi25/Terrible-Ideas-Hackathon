@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const SimpleChat = ({ onResponse }) => {
+const SimpleChat = ({ label, onResponse }) => {
   const [input, setInput] = useState('');
   // const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
   let response = '';
+
+  let basePrompt = `Can you come up with a resume for a ${label}? The resume should consists of skills suitable for a normal job that makes logical sense. Also include a superhero alter ego for the ${label}. Make it as comprehensive as you can while making it funny. Be sure to include experiences and skills that it would have and would be relevant for these jobs. You can use your imagination as long as it makes sense. You can make connections to elements from the popular culture in Australia as well as elements from its hypothetical daily life.`;
 
   const handleSend = async () => {
     setLoading(true);
@@ -16,7 +18,7 @@ const SimpleChat = ({ onResponse }) => {
         'https://api.openai.com/v1/chat/completions',
         {
           model: 'gpt-3.5-turbo',
-          messages: [{ role: 'user', content: input }],
+          messages: [{ role: 'user', content: basePrompt }],
         },
         {
           headers: {
@@ -38,7 +40,7 @@ const SimpleChat = ({ onResponse }) => {
   return (
     <div>
       <div className="AIPrompt">
-      <textarea value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type your prompt here" className="AIContainer"/>
+      {/* <textarea value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type your prompt here" className="AIContainer"/> */}
         <button onClick={handleSend} disabled={loading} className="sendButton">
           {loading ? 'Loading...' : 'Send'}
         </button>

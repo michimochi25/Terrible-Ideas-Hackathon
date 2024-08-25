@@ -125,6 +125,7 @@ h2 {
   height: 500px;
   border-radius: 20px;
   overflow: auto;
+  font-size: medium;
 }
 
 .mouth-pic {

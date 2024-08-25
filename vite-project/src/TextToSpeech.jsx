@@ -10,7 +10,7 @@ function TextToSpeech({ text }) {
     start, // Function to start the speech or put it in queue
     pause, // Function to pause the speech
     stop, // Function to stop the speech or remove it from queue
-  } = useSpeech({ text });
+  } = useSpeech({ text: text });
 
   useEffect(() => {
     // auto start

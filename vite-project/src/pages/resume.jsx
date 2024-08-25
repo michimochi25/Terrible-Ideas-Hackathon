@@ -16,6 +16,7 @@ function Resume() {
 
   const handleResponse = (newResponse) => {
     setResponse(newResponse);
+    console.log(newResponse);
   };
 
   const text = "You suck, no resume for you!";
@@ -38,8 +39,8 @@ function Resume() {
           {/* the CV */}
           {/* <OpenAIbot /> */}
           {/* <LlamaBot /> */}
-          {/* <SimpleChat onResponse={handleResponse} /> */}
-          <SimpleChat />
+          <SimpleChat label={label} onResponse={handleResponse} />
+          {/* <SimpleChat /> */}
 
           {img && <TextToSpeech text={response} />}
 
