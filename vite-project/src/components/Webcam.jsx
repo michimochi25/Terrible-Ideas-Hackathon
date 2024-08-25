@@ -2,8 +2,10 @@ import React, { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 import Camera from '../assets/camera.svg';
 import ObjectDetection from '../ObjectDetector';
+import { useNavigate } from 'react-router-dom';
 
 const WebcamCapture = () => {
+  const navigate = useNavigate();
   const webcamRef = useRef(null);
   const [imageSrc, setImageSrc] = useState(null);
   const [targetLabel, setTargetlabel] = useState(null);
@@ -39,6 +41,11 @@ const WebcamCapture = () => {
             {/* <img src={imageSrc} alt="Captured" /> */}
             <ObjectDetection imageSrc={imageSrc} onTargetLabelChange={handleLabelValueChange}/>
             <h4>{targetLabel}</h4> {/*For debug only*/}
+            <div hidden>
+              {setTimeout(() => {
+                navigate('/resume', {state:targetLabel})
+              }, 4000)}
+            </div>
           </div>
         )}
       </div>
