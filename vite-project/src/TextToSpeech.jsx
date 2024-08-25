@@ -20,8 +20,8 @@ function TextToSpeech() {
     <div style={{ display: "flex", flexDirection: "column", rowGap: "1rem" }}>
       <Text />
       <div style={{ display: "flex", columnGap: "0.5rem" }}>
-        {speechStatus !== "started" ? <button onClick={start}>Start</button> : <button onClick={pause}>Pause</button>}
-        <button onClick={stop}>Stop</button>
+        {speechStatus !== "started" ? <button className="button" onClick={start}>Start</button> : <button className="button" onClick={pause}>Pause</button>}
+        <button className="button" onClick={stop}>Stop</button>
       </div>
     </div>
   );
