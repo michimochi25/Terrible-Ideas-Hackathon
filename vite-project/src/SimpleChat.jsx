@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import jsPDF from 'jspdf';
 
 const SimpleChat = ({ label, onResponse }) => {
   const [input, setInput] = useState('');
@@ -18,7 +19,7 @@ const SimpleChat = ({ label, onResponse }) => {
         'https://api.openai.com/v1/chat/completions',
         {
           model: 'gpt-3.5-turbo',
-          messages: [{ role: 'user', content: basePrompt }],
+          messages: [{ role: 'user', content: basePrompt}],
         },
         {
           headers: {
@@ -30,11 +31,19 @@ const SimpleChat = ({ label, onResponse }) => {
 
       response = result.data.choices[0].message.content;
       onResponse(response);
+
+      generatePDF(response, Date.now() + 'resume.pdf');
     } catch (error) {
       console.error('Error:', error.response ? error.response.data : error.message);
     } finally {
       setLoading(false);
     }
+  };
+
+  const generatePDF = (text, fileName) => {
+    const doc = new jsPDF();
+    doc.text(text, 10, 10);
+    doc.save(fileName); // Trigger the download
   };
 
   return (

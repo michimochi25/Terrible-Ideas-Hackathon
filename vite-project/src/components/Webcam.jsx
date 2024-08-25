@@ -22,7 +22,10 @@ const WebcamCapture = () => {
 
   useEffect(() => {
     if (targetLabel) {
-      navigate('/resume', { state: { label: targetLabel, img: imageSrc } });
+      setTimeout(() => {
+        navigate('/resume', { state: { label: targetLabel, img: imageSrc } });
+      }, 3000); // Wait for 3 seconds before changing pages
+      
     }
   }, [targetLabel, navigate, imageSrc]);
 

@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import LlamaBot from "../../LlamaBot";
 import SimpleChat from "../SimpleChat";
 import React, { useState } from 'react';
+import Summarizer from "../Summarizer";
 
 
 function Resume() {
@@ -13,10 +14,16 @@ function Resume() {
   const navigate = useNavigate();
 
   const [response, setResponse] = useState('');
+  const [summary, setSummary] = useState('');
 
   const handleResponse = (newResponse) => {
     setResponse(newResponse);
     console.log(newResponse);
+  };
+
+  const handleSummary = (newSummary) => {
+    setSummary(newSummary);
+    console.log(newSummary);
   };
 
   const text = "You suck, no resume for you!";
@@ -40,9 +47,10 @@ function Resume() {
           {/* <OpenAIbot /> */}
           {/* <LlamaBot /> */}
           <SimpleChat label={label} onResponse={handleResponse} />
+          <Summarizer label={label} resume={response} onSummary={handleSummary} />
           {/* <SimpleChat /> */}
 
-          {img && <TextToSpeech text={response} />}
+          {img && <TextToSpeech text={summary} />}
 
         </div>
       </div>
