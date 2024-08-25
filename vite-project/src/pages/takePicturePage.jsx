@@ -1,6 +1,8 @@
 import InputBox from '../components/InputBox';
 import { useNavigate } from 'react-router-dom';
 import WebcamCapture from '../components/Webcam';
+import React from 'react';
+
 
 function TakePic() {
   const navigate = useNavigate();
