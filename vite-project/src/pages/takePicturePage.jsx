@@ -8,14 +8,15 @@ function TakePic() {
   return (
     <div className="innerContainer">
       <h1>ResuManiac</h1>
-      <p className="subHeadings">ACE YOUR INTERVIEW</p>
+      <p className="subHeadings">Rescue Your Career…
+        or Sabotage It, We’re Not Sure!</p>
 
       <div className="flexContainer">
         <WebcamCapture />
         <InputBox />
-        <span className="take-pic-button" onClick={() => navigate('/')}>
+        {/* <span className="take-pic-button" onClick={() => navigate('/')}>
           Upload a file instead?
-        </span>
+        </span> */}
       </div>
     </div>
   )

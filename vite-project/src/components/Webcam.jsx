@@ -39,11 +39,11 @@ const WebcamCapture = () => {
           <div>
             <h2>Captured Image:</h2>
             {/* <img src={imageSrc} alt="Captured" /> */}
-            <ObjectDetection imageSrc={imageSrc} onTargetLabelChange={handleLabelValueChange}/>
+            <ObjectDetection imageSrc={imageSrc} onTargetLabelChange={handleLabelValueChange} />
             <h4>{targetLabel}</h4> {/*For debug only*/}
             <div hidden>
               {setTimeout(() => {
-                navigate('/resume', {state:targetLabel})
+                navigate('/resume', { state: { label: targetLabel, img: imageSrc } });
               }, 4000)}
             </div>
           </div>
