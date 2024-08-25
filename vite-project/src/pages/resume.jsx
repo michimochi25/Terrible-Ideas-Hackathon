@@ -10,10 +10,10 @@ function Resume() {
 
   return (
     <div className="resume">
-      <TextToSpeech />
+      {img && <TextToSpeech />}
       <div className="container">
         <button onClick={() => navigate('../')} className="back-button"></button>
-        {label && <div className="image"
+        {img && <div className="image"
           style={{
             backgroundImage: `url(${img})`,
             backgroundRepeat: 'no-repeat',
