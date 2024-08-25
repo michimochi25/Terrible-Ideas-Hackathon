@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import { json } from 'react-router-dom';
 export const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXJyaWJsZS5pZGVhQG9wZW5vbmlvbi5haSIsImV4cCI6NTMyNDQ4Mzc3Mn0.4coCRAgTFqsnqnbLhZXzZItKtenChNOSQTqEL3brPiQ";
 export const urlBASE = 'https://api.closeonion.com';
 
@@ -43,15 +42,8 @@ function AIbot() {
                     throw new Error('Network response was not ok');
                 }
                 console.log('Content-Type:', response.headers.get('Content-Type'));
-                // console.log("======================");
-                // console.log(response.text());
-
-
-                // const r = response.json();
 
                 const r = response.text();
-
-                console.log(r);
                 return r;
             })
             .then((data) => {
@@ -64,6 +56,29 @@ function AIbot() {
             });
     }, []); // Empty dependency array means this useEffect runs once after the initial render
 
+    useEffect(() => {
+        if (data) {
+            const words = data.split('}');
+            const content = words
+                            .map(word => word.replace('data: {"answer": "', '').replace('"', ''))
+                            .join('');
+
+            const handleDownload = () => {
+                const blog = new Blob([content], { type: 'text/markdown;charset=utf-8' });
+                const resumeUrl = URL.createObjectURL(blog);
+        
+                const resume = document.createElement('a');
+                resume.href = resumeUrl;
+                resume.download = Date.now() + 'resume.html';
+
+                resume.click();
+            };
+
+            handleDownload();
+        }
+    }, [data]); // runs when data changes
+
+
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -72,21 +87,16 @@ function AIbot() {
         return <div>Error: {error.message}</div>;
     }
 
-    // to-do: refactor later
-    const words = data.split('}');
-    const result = [];
-    for (let word of words) {
-        word = word.replace('data: {"answer": "', '');
-        word = word.replace('"', '');
-        result.push(word);
-    }
+    // console.log(content);
 
-    console.log(result);
 
     return (
         <div>
             <h1>Data from API</h1>
-            <p>{result}</p>
+            <p>{data}</p>
+            {/* <button onClick={handleDownload}>Download Resume</button> */}
+
+
             {/* <p>{JSON.stringify(data, null, 2)}</p> */}
 
         </div>
