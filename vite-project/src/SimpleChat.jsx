@@ -4,7 +4,6 @@ import jsPDF from 'jspdf';
 
 const SimpleChat = ({ label, onResponse }) => {
   const [input, setInput] = useState('');
-  // const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
   let response = '';
 
@@ -32,7 +31,6 @@ const SimpleChat = ({ label, onResponse }) => {
       response = result.data.choices[0].message.content;
       onResponse(response);
 
-      // downloadFile(response, Date.now() + 'resume');
       generatePDF(response, Date.now() + 'resume.pdf');
     } catch (error) {
       console.error('Error:', error.response ? error.response.data : error.message);
@@ -40,18 +38,6 @@ const SimpleChat = ({ label, onResponse }) => {
       setLoading(false);
     }
   };
-
-  // const downloadFile = (content, fileName) => {
-  //   const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-  //   const url = URL.createObjectURL(blob);
-  //   const a = document.createElement('a');
-  //   a.href = url;
-  //   a.download = fileName;
-  //   document.body.appendChild(a);
-  //   a.click();
-  //   document.body.removeChild(a);
-  //   URL.revokeObjectURL(url);
-  // };
 
   const generatePDF = (text, fileName) => {
     const doc = new jsPDF();
